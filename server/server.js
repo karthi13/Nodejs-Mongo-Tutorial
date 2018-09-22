@@ -5,6 +5,8 @@ const {mongoose} = require('./db/mongoose');
 const {Todo} = require('./models/Todo');
 const {User} = require('./models/User');
 
+const Port = process.env.Port || 3000;
+
 let app = express();
 
 app.use(bodyParser.json());
@@ -21,6 +23,6 @@ app.post('/todo',(req,res) => {
     })
 })
 
-app.listen(3000, (req, res) => {
+app.listen(Port, (req, res) => {
     console.log("server listning on port 3000");
 });
